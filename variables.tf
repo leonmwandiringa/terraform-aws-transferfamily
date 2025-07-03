@@ -78,11 +78,6 @@ variable "endpoint_details" {
 
 variable "security_policy_name" {
   type = string
-  default = "TransferSecurityPolicy-2023-10"
+  default = "TransferSecurityPolicy-2020-06"
   description = "security policy name for transfer family server"
-  validation {
-    condition     = contains(["TransferSecurityPolicy-2023-10", "TransferSecurityPolicy-2022-07", "TransferSecurityPolicy-2021-06"], var.security_policy_name)
-    error_message = "security_policy_name must be either TransferSecurityPolicy-2023-10, TransferSecurityPolicy-2022-07 or TransferSecurityPolicy-2021-06"
-  }
-  
 }
