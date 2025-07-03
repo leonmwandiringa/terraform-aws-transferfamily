@@ -67,7 +67,7 @@ variable "function_arn" {
 
 variable "endpoint_details" {
   type = object({
-    vpc_endpoint_id = string
+    address_allocation_ids = list(string)
     vpc_id          = string
     subnet_ids      = list(string)
   })
