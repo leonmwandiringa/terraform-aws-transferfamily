@@ -11,7 +11,7 @@ resource "aws_transfer_server" "default" {
   dynamic "endpoint_details" {
     for_each = var.endpoint_details != null && var.endpoint_type != "PUBLIC" ? [var.endpoint_details] : []
     content {
-      vpc_endpoint_id = endpoint_details.value.vpc_endpoint_id
+      address_allocation_ids = endpoint_details.value.address_allocation_ids
       vpc_id          = endpoint_details.value.vpc_id
       subnet_ids      = endpoint_details.value.subnet_ids
     }
